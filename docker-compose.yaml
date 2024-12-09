@@ -1,0 +1,17 @@
+services:
+  backend:
+    platform: linux/amd64
+    build:
+      context: ./backend
+      dockerfile: dockerfile
+    image: aida0/load_back:latest
+    container_name: load_back
+    ports:
+      - name: node-http
+        target: 3000
+        published: 80
+        protocol: tcp
+      - name: node-https
+        target: 3000
+        published: 443
+        protocol: tcp
