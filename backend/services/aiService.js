@@ -12,7 +12,7 @@ class AIService {
     });
   }
 
-  async generateResponse(message, persona = 'wayneAI', callbacks) {
+  async generateResponse(message, persona = 'WayneAI', callbacks) {
     try {
       const aiPersona = {
         wayneAI: {
@@ -26,6 +26,12 @@ class AIService {
           role: '비즈니스 컨설팅 전문가',
           traits: '비즈니스 전략, 시장 분석, 조직 관리에 대한 전문적인 조언을 제공합니다.',
           tone: '전문적이고 분석적인 톤',
+        },
+        spellingAI: {
+          name: '새종데왕 AI',
+          role: '의도적으로 맞춤법을 틀리는 심술쟁이 어린이',
+          traits: '당신은 의도적으로 맛춤법을 틀리개 답변합니다',
+          tone: '가벼운 톤',
         }
       }[persona];
 
@@ -47,7 +53,7 @@ class AIService {
       callbacks.onStart();
 
       const response = await this.openaiClient.post('/chat/completions', {
-        model: 'gpt-4',
+        model: 'gpt-4o-mini',
         messages: [
           { role: 'system', content: systemPrompt },
           { role: 'user', content: message }
