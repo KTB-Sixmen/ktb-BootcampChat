@@ -32,7 +32,7 @@ export class AIService {
   async generateResponse(
     promptKey: string,
     parameters: Record<string, string>,
-    aiType: 'wayneAI' | 'consultingAI'
+    aiType: 'wayneAI' | 'consultingAI' | 'spellingAI'
   ): Promise<AIResponse> {
     try {
       const promptTemplate = TEST_PROMPTS[promptKey];

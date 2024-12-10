@@ -188,6 +188,12 @@ export const useMessageHandling = (socketRef, currentUser, router, handleSession
        email: 'ai@consulting.ai',
        isAI: true
      },
+     {
+      _id: 'spellingAI',
+      name: 'spellingAI',
+      email: 'ai@spelling.ai',
+      isAI: true
+    },
      ...room.participants
    ];
 

@@ -18,6 +18,10 @@ test.describe('AI 상호작용 테스트', () => {
     // Consulting AI와 대화
     await helpers.sendAIMessage(page, '비즈니스 조언이 필요해요', 'consultingAI');
     await expect(page.locator('.message-ai').last()).toBeVisible();
+
+    // Spelling AI와 대화
+    await helpers.sendAIMessage(page, '맞춤법 배틀이 필요해요', 'spellingAI');
+    await expect(page.locator('.message-ai').last()).toBeVisible();
     
     // 기본값(wayneAI) 사용
     await helpers.sendAIMessage(page, '감사합니다');

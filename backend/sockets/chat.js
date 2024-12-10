@@ -823,9 +823,9 @@ module.exports = function(io) {
   function extractAIMentions(content) {
     if (!content) return [];
     
-    const aiTypes = ['wayneAI', 'consultingAI'];
+    const aiTypes = ['wayneAI', 'consultingAI','spellingAI'];
     const mentions = new Set();
-    const mentionRegex = /@(wayneAI|consultingAI)\b/g;
+    const mentionRegex = /@(wayneAI|consultingAI|spellingAI)\b/g;
     let match;
     
     while ((match = mentionRegex.exec(content)) !== null) {

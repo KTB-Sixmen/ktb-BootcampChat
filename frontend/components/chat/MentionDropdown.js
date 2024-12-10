@@ -122,7 +122,7 @@ const MentionDropdown = ({
             
             <div className="mention-info">
               <span className="mention-name">
-                {user.isAI ? (user.name === 'wayneAI' ? 'Wayne AI' : 'Consulting AI') : user.name}
+              {user.isAI ? (user.name === 'wayneAI' ? 'Wayne AI' : user.name === 'consultingAI' ? 'Consulting AI' : '새종데왕 AI') : user.name}
               </span>
               {renderUserBadge(user)}
             </div>
