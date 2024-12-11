@@ -207,9 +207,9 @@ export const useMessageHandling = (socketRef, currentUser, router, handleSession
       isAI: true
     },
     {
-      _id: 'agentC',
-      name: 'agentC',
-      email: 'ai@agentC.ai',
+      _id: 'hankangAI',
+      name: 'hankangAI',
+      email: 'ai@hankangAI.ai',
       isAI: true
     },
      ...room.participants

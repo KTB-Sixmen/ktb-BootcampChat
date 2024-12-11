@@ -32,8 +32,8 @@ test.describe('AI 상호작용 테스트', () => {
     await helpers.sendAIMessage(page, 'AgentB, 나에게 영감을 주세요!', 'agentB');
     await expect(page.locator('.message-ai').last()).toBeVisible();
 
-    // AgentC와 대화
-    await helpers.sendAIMessage(page, 'AgentC, 새로운 아이디어가 필요해요.', 'agentC');
+    // hankangAI와 대화
+    await helpers.sendAIMessage(page, 'hankangAI, 새로운 아이디어가 필요해요.', 'hankangAI');
     await expect(page.locator('.message-ai').last()).toBeVisible();
     
     // 기본값(wayneAI) 사용

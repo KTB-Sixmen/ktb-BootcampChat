@@ -30,20 +30,20 @@ const AIMessage = ({
     name: msg.aiType === 'wayneAI' ? 'Wayne AI' :
           msg.aiType === 'consultingAI' ? 'Consulting AI' :
           msg.aiType === 'refuteAI' ? '반박AI' :
-          msg.aiType === 'agentB' ? 'Agent B' :
-          msg.aiType === 'agentC' ? 'Agent C' :
+          msg.aiType === 'agentB' ? '언어유희왕' :
+          msg.aiType === 'hankangAI' ? '한강AI' :
           '새종데왕 AI',
     email: msg.aiType === 'wayneAI' ? 'ai@wayne.ai' :
           msg.aiType === 'consultingAI' ? 'ai@consulting.ai' :
           msg.aiType === 'refuteAI' ? 'ai@refuteAI.ai' :
           msg.aiType === 'agentB' ? 'ai@agentB.ai' :
-          msg.aiType === 'agentC' ? 'ai@agentC.ai' :
+          msg.aiType === 'hankangAI' ? 'ai@hankangAI.ai' :
           'ai@spelling.ai',
     avatarInitial: msg.aiType === 'wayneAI' ? 'W' :
                     msg.aiType === 'consultingAI' ? 'C' :
                     msg.aiType === 'refuteAI' ? 'A' :
                     msg.aiType === 'agentB' ? 'B' :
-                    msg.aiType === 'agentC' ? 'C' :
+                    msg.aiType === 'hankangAI' ? 'H' :
                     <img src="images/asd.png" className="w-50" />
     };
 

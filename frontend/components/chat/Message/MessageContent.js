@@ -34,7 +34,7 @@ const MessageContent = ({ content, isAI = false }) => {
 
   // 멘션 패턴을 찾아서 React 엘리먼트로 변환하는 함수
   const renderContentWithMentions = useMemo(() => (text) => {
-    const mentionPattern = /@(wayneAI|consultingAI|spellingAI|refuteAI|agentB|agentC|[\w.-]+)/g;
+    const mentionPattern = /@(wayneAI|consultingAI|spellingAI|refuteAI|agentB|hankangAI|[\w.-]+)/g;
     const parts = [];
     let lastIndex = 0;
     let match;
@@ -50,14 +50,14 @@ const MessageContent = ({ content, isAI = false }) => {
 
       const mentionedName = match[1];
       // const isAIMention = mentionedName === 'wayneAI' || mentionedName === 'consultingAI'; 기존코드 백업
-      const isAIMention = ['wayneAI', 'consultingAI', 'spellingAI', 'refuteAI', 'agentB', 'agentC'].includes(mentionedName);
+      const isAIMention = ['wayneAI', 'consultingAI', 'spellingAI', 'refuteAI', 'agentB', 'hankangAI'].includes(mentionedName);
       const displayName = isAIMention 
       ? (mentionedName === 'wayneAI' ? 'Wayne AI'
         : mentionedName === 'consultingAI' ? 'Consulting AI'
         : mentionedName === 'spellingAI' ? '새종데왕 AI'
         : mentionedName === 'refuteAI' ? '반박AI'
-        : mentionedName === 'agentB' ? 'Agent B'
-        : 'Agent C')
+        : mentionedName === 'agentB' ? '언어유희왕'
+        : '한강AI')
       : mentionedName;
 
       const mentionClass = isAIMention
@@ -72,7 +72,7 @@ const MessageContent = ({ content, isAI = false }) => {
                   ? 'mention-refuteAI'
                   : mentionedName === 'agentB'
                     ? 'mention-agentB'
-                    : 'mention-agentC'
+                    : 'mention-hankangAI'
         }`
       : 'mention mention-user';
 

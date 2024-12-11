@@ -25,7 +25,7 @@ const AI_COLORS = {
     backgroundColor: '#0084ff', // 웨인 AI 색상과 동일
     color: '#FFFFFF'
   },
-  agentC: {
+  hankangAI: {
     backgroundColor: '#0084ff', // 웨인 AI 색상과 동일
     color: '#FFFFFF'
   }
@@ -59,8 +59,8 @@ export const getAIAvatarStyles = (aiName) => {
   if (formattedName === 'agentb') {
     return AI_COLORS.agentB;
   }
-  if (formattedName === 'agentc') {
-    return AI_COLORS.agentC;
+  if (formattedName === 'hankangAI') {
+    return AI_COLORS.hankangAI;
   }
   // 알 수 없는 AI의 경우 기본값 반환
   return AI_COLORS.wayneAI;
@@ -96,9 +96,9 @@ export const generateColorFromEmail = (email) => {
     globalColorCache.set(email, AI_COLORS.agentB.backgroundColor);
     return AI_COLORS.agentB.backgroundColor;
   }
-  if (email.endsWith('@agentC.ai')) {
-    globalColorCache.set(email, AI_COLORS.agentC.backgroundColor);
-    return AI_COLORS.agentC.backgroundColor;
+  if (email.endsWith('@hankangAI.ai')) {
+    globalColorCache.set(email, AI_COLORS.hankangAI.backgroundColor);
+    return AI_COLORS.hankangAI.backgroundColor;
   }
 
   // 해시 생성
