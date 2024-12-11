@@ -20,7 +20,20 @@ test.describe('AI 상호작용 테스트', () => {
     await expect(page.locator('.message-ai').last()).toBeVisible();
 
     // Spelling AI와 대화
-    await helpers.sendAIMessage(page, '맞춤법 배틀이 필요해요', 'spellingAI');
+    await helpers.sendAIMessage(page, '맞춤법 배틀 할래요?', 'spellingAI');
+    await expect(page.locator('.message-ai').last()).toBeVisible();
+
+
+    // refuteAI와 대화
+    await helpers.sendAIMessage(page, 'refuteAI에게 어떤 계획이 있어요?', 'refuteAI');
+    await expect(page.locator('.message-ai').last()).toBeVisible();
+
+    // AgentB와 대화
+    await helpers.sendAIMessage(page, 'AgentB, 나에게 영감을 주세요!', 'agentB');
+    await expect(page.locator('.message-ai').last()).toBeVisible();
+
+    // AgentC와 대화
+    await helpers.sendAIMessage(page, 'AgentC, 새로운 아이디어가 필요해요.', 'agentC');
     await expect(page.locator('.message-ai').last()).toBeVisible();
     
     // 기본값(wayneAI) 사용

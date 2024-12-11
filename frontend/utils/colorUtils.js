@@ -16,6 +16,18 @@ const AI_COLORS = {
   spellingAI: {
     backgroundColor: '#008A50',
     color: '#FFFFFF'
+  },
+  refuteAI: {
+    backgroundColor: '#0D47A1 ', // 딥 네이비
+    color: '#FFFFFF'
+  },
+  agentB: {
+    backgroundColor: '#0084ff', // 웨인 AI 색상과 동일
+    color: '#FFFFFF'
+  },
+  agentC: {
+    backgroundColor: '#0084ff', // 웨인 AI 색상과 동일
+    color: '#FFFFFF'
   }
 };
 
@@ -41,7 +53,15 @@ export const getAIAvatarStyles = (aiName) => {
   if (formattedName === 'spellingai') {
     return AI_COLORS.spellingAI;
   }
-  
+  if (formattedName === 'refuteAI') {
+    return AI_COLORS.refuteAI;
+  }
+  if (formattedName === 'agentb') {
+    return AI_COLORS.agentB;
+  }
+  if (formattedName === 'agentc') {
+    return AI_COLORS.agentC;
+  }
   // 알 수 없는 AI의 경우 기본값 반환
   return AI_COLORS.wayneAI;
 };
@@ -67,6 +87,18 @@ export const generateColorFromEmail = (email) => {
   if (email.endsWith('@spelling.ai')) {
     globalColorCache.set(email, AI_COLORS.spellingAI.backgroundColor);
     return AI_COLORS.spellingAI.backgroundColor;
+  }
+  if (email.endsWith('@refuteAI.ai')) {
+    globalColorCache.set(email, AI_COLORS.refuteAI.backgroundColor);
+    return AI_COLORS.refuteAI.backgroundColor;
+  }
+  if (email.endsWith('@agentB.ai')) {
+    globalColorCache.set(email, AI_COLORS.agentB.backgroundColor);
+    return AI_COLORS.agentB.backgroundColor;
+  }
+  if (email.endsWith('@agentC.ai')) {
+    globalColorCache.set(email, AI_COLORS.agentC.backgroundColor);
+    return AI_COLORS.agentC.backgroundColor;
   }
 
   // 해시 생성
